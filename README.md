@@ -28,7 +28,12 @@ For other operating systems, you may get a warning that AIRFLOW_UID is not set, 
 AIRFLOW_UID=50000
 ```
 
-3. Initialize the database
+3. Build image
+```
+docker-compose build
+```
+
+4. Initialize the database
 
 On all operating systems, you need to run database migrations and create the first user account. To do this, run the following command:
 
@@ -37,7 +42,7 @@ docker-compose -f docker-compose.yaml up airflow-init -d
 ```
 
 
-4. Start Airflow using Docker Compose
+5. Start Airflow using Docker Compose
 
 Customize the `docker-compose.yaml` file to select your preferred database and Redis configuration. Afterward, run the following command to start Airflow and all associated services:
 
@@ -45,7 +50,7 @@ Customize the `docker-compose.yaml` file to select your preferred database and R
 docker-compose -f docker-compose.yaml up -d
 ```
 
-5. Cleaning up
+6. Cleaning up
 
 To stop and delete the containers, remove volumes with database data, and delete downloaded images, run the following command:
 
